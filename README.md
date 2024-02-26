@@ -1,7 +1,7 @@
 # Iris-Classifier
 Iris Classifier using machine learning algorithems.
 
-There are three species of Iris flower .
+There are three species of Iris flower :
 1) Setosa
 2) Versicolor
 3) Virginica
