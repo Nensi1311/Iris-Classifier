@@ -12,3 +12,7 @@ import matplotlib.pyplot as plt
 
 import warnings
 warnings.filterwarnings('ignore')
+
+# load data set or read from download
+df = sns.load_dataset("iris")
+df
