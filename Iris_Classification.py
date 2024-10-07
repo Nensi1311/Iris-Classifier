@@ -38,3 +38,42 @@ df.info()
 df['species'].value_counts()
 
 # EDA
+df['sepal_length'].hist()
+df['sepal_width'].hist()
+df['petal_length'].hist()
+df['petal_width'].hist()
+
+colors = ["red", "blue", "green"]
+Species = ["setosa", "versicolor", "virginica"]
+for i in range(3):
+    x = df[df['species'] == Species[i]]
+    plt.scatter(x['sepal_length'], x['sepal_width'], c = colors[i], label = Species[i])
+plt.xlabel("Sepal Length")    
+plt.ylabel("Sepal Width")
+plt.show()
+
+for i in range(3):
+    x = df[df['species'] == Species[i]]
+    plt.scatter(x['petal_length'], x['petal_width'], c = colors[i], label = Species[i])
+plt.xlabel("Petal Length")    
+plt.ylabel("Petal Width")
+plt.show()
+
+for i in range(3):
+    x = df[df['species'] == Species[i]]
+    plt.scatter(x['sepal_length'], x['petal_length'], c = colors[i], label = Species[i])
+plt.xlabel("Sepal Length")    
+plt.ylabel("Petal Length")
+plt.show()
+
+for i in range(3):
+    x = df[df['species'] == Species[i]]
+    plt.scatter(x['sepal_width'], x['petal_width'], c = colors[i], label = Species[i])
+plt.xlabel("Sepal Width")    
+plt.ylabel("Petal Width")
+plt.show()
+
+corr = df.corr()
+corr
+sns.heatmap(corr, cmap="PuRd", annot=True)
+
