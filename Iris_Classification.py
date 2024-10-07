@@ -22,3 +22,19 @@ df.head()
 
 # print last five of the data
 df.tail()
+
+# print true if there is null value in the data
+df.isnull()
+
+# print sum of null values
+df.isnull().sum()
+
+df.describe()
+
+df.describe(include = "object")
+
+df.info()
+
+df['species'].value_counts()
+
+# EDA
