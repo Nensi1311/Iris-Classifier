@@ -16,3 +16,6 @@ warnings.filterwarnings('ignore')
 # load data set or read from download
 df = sns.load_dataset("iris")
 df
+
+# print first five rows of the data
+df.head()
