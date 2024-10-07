@@ -1,15 +1,12 @@
+# import libraries
 # pandas - working with data set, load data from a CSV file, grouping data by a specific column
 import pandas as pd
-
 # working with numeric data, provides efficient operations on arrays of homogeneous data
 import numpy as np
-
 # is a library for making statistical graphics in Python
 import seaborn as sns
-
 # displaying data and creating static, animated and interactive plots
 import matplotlib.pyplot as plt
-
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -77,26 +74,31 @@ corr = df.corr()
 corr
 sns.heatmap(corr, cmap="PuRd", annot=True)
 
+# Model Training
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 import pickle
 
+# Train-Test Split
 X = df.drop(columns=["species"])
 Y = df["species"]
 x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size = 0.30)
 
+# 1. Logistic Regression
 model = LogisticRegression()
 model.fit(x_train, y_train)
 print("Logistic Regression Accuracy is : ", model.score(x_test, y_test)*100)
 model1.fit(x_train.values, y_train.values)
 
+# 2. KNN
 model = KNeighborsClassifier()
 model.fit(x_train, y_train)
 print("K-nearest neighbors Accuracy is :", model.score(x_test, y_test)*100)
 model.fit(x_train.values, y_train.values)
 
+# 3. Decision Tree
 model = DecisionTreeClassifier()
 model.fit(x_train, y_train)
 print("Decision Tree Accuracy is :", model.score(x_test, y_test)*100)
