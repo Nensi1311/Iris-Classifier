@@ -19,3 +19,6 @@ df
 
 # print first five rows of the data
 df.head()
+
+# print last five of the data
+df.tail()
